@@ -18,6 +18,7 @@ const searchCity = (event) => {
   if (searchInput.value) {
     city = searchInput.value;
     getCityWeather(city);
+    getFiveDayForecast(city);
     storedCities.push(city);
     localStorage.setItem('cities', JSON.stringify(storedCities));
     renderSearchHistory();
