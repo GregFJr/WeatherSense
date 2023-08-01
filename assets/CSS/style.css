@@ -37,17 +37,12 @@
 /* 5 day forecast cards */
   .card {
     margin: 5px 5px 0 5px;
-    width: 15em
+    width: 15em;
+    text-transform: capitalize;
   }
 
   /* Assuring loaded img resizes to fit card */
   
   img {
     width: 100%;
-  }
-
-  @media screen and (max-width: 489px) {
-    .card {
-      width: 31%;
-    }
   }
