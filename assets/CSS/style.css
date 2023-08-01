@@ -22,6 +22,7 @@
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   }
   
   /* Style the 5-day forecast list */
@@ -37,6 +38,7 @@
 /* 5 day forecast cards */
   .card {
     margin: 5px 5px 0 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     width: 15em;
     text-transform: capitalize;
   }
