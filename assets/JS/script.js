@@ -25,7 +25,7 @@ const searchCity = (event) => {
 };
 
 const getCityWeather = (city) => {
-  let req = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
+  let req = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${APIKey}`;
 
   fetch(req)
     .then(function (response) {
@@ -50,7 +50,7 @@ const getDayOfWeek = (dateString) => {
 };
 
 const getFiveDayForecast = (city) => {
-  let req = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
+  let req = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${APIKey}`;
 
   fetch(req)
     .then(function (response) {
