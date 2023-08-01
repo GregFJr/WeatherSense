@@ -1,0 +1,47 @@
+/* Center the main content */
+.container {
+    margin-top: 30px;
+  }
+/* Style the search history section */
+  #search-history{
+    padding-left: 0;
+  }
+
+  .list-group-item:hover {
+    cursor: pointer;
+  }
+  
+  /* Style the search bar and history section */
+  .col-md-4 {
+    padding: 20px;
+  }
+  
+  /* Style the city name and current day forecast section */
+  .city-forecast {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+  }
+  
+  /* Style the 5-day forecast list */
+  .forecast-list {
+    margin-top: 30px;
+  }
+  
+  /* Style the forecast cards */
+  .forecast-card {
+    margin-bottom: 20px;
+  }
+
+/* 5 day forecast cards */
+  .card {
+    margin: 5px 5px 0 5px;
+    width: 15em
+  }
+
+  /* Assuring loaded img resizes to fit card */
+  
+  img {
+    width: 100%;
+  }
