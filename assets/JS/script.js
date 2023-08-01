@@ -124,6 +124,49 @@ const renderSearchHistory = () => {
   });
 };
 
+// Set the default city
+const setDefaultCity = (defaultCity) => {
+    city = defaultCity;
+    getCityWeather(city);
+    getFiveDayForecast(city);
+    renderSearchHistory();
+  };
+
+// Get the user's current location
+const getCurrentLocation = () => {
+    if ("geolocation" in navigator) {
+    navigator.geolocation.getCurrentPosition(
+    (position) => {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+  
+    // Fetch the city name based on latitude and longitude using reverse geocoding
+    fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=${APIKey}`)
+    .then(response => response.json())
+    .then(data => {
+    // Use the first result (most likely the city name)
+    const city = data[0].name;
+    // Set the default city to the user's current location
+    setDefaultCity(city);})
+    .catch(error => {
+    console.error('Error fetching current location:', error);
+    // In case of error, set New York as the default city
+    setDefaultCity('New York');});
+  },
+    (error) => {
+    console.error('Error obtaining geolocation:', error);
+    // In case of error, set New York as the default city
+    setDefaultCity('New York');});
+    } else {
+      console.error('Geolocation is not available in this browser.');
+      // In case geolocation is not available, set New York as the default city
+      setDefaultCity('New York');
+    }
+  };
+
+  
+getCurrentLocation();
+
 // Load search history on page load
 renderSearchHistory();
 
