@@ -19,10 +19,13 @@ const searchCity = (event) => {
     city = searchInput.value;
     getCityWeather(city);
     getFiveDayForecast(city);
-    storedCities.push(city);
-    localStorage.setItem('cities', JSON.stringify(storedCities));
-    renderSearchHistory();
-  }
+    
+  if (!storedCities.includes(city)) {
+      storedCities.push(city);
+      localStorage.setItem('cities', JSON.stringify(storedCities));
+      renderSearchHistory();
+      }
+   }
 };
 
 const getCityWeather = (city) => {
