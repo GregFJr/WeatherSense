@@ -45,3 +45,9 @@
   img {
     width: 100%;
   }
+
+  @media screen and (max-width: 489px) {
+    .card {
+      width: 31%;
+    }
+  }
