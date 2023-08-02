@@ -5,6 +5,7 @@
 /* Style the search history section */
   #search-history{
     padding-left: 0;
+    text-transform: capitalize;
   }
 
   .list-group-item:hover {
