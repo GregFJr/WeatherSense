@@ -25,6 +25,7 @@ const searchCity = (event) => {
       localStorage.setItem('cities', JSON.stringify(storedCities));
       renderSearchHistory();
       }
+      searchInput.value = '';
    }
 };
 
