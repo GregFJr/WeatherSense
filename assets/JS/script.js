@@ -1,6 +1,6 @@
 // Weather Dashboard
 let APIKey = '88eb50293c8c5c644a6ada876a8ef28e';
-let city = 'New York';
+let city = '';
 
 let forecast = document.getElementById('forecast');
 let temp = document.getElementById('temp');
