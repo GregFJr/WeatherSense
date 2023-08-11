@@ -4,6 +4,7 @@ let city = '';
 
 let forecast = document.getElementById('forecast');
 let temp = document.getElementById('temp');
+let humidity = document.getElementById('humidity');
 let wind = document.getElementById('wind');
 let title = document.getElementById('title');
 let cardImg = document.getElementById('card-img');
@@ -41,9 +42,11 @@ const getCityWeather = (city) => {
       forecast.textContent = 'Forecast: ' + data.weather[0].description;
       forecast.setAttribute('style', 'text-transform: capitalize;');
       temp.textContent = 'Temp: ' + Math.round(data.main.temp * 9 / 5 - 459.67) + '°F';
+      humidity.textContent = 'Humidity: ' + data.main.humidity + '%';
       cardImg.setAttribute('src', `https://source.unsplash.com/800x400/?${city}`);
       cardImg.setAttribute('alt', data.weather[0].description);
       wind.textContent = 'Wind Speed: ' + data.wind.speed + ' m/s';
+      console.log(data)
     });
 };
 
@@ -69,15 +72,16 @@ const getFiveDayForecast = (city) => {
         const date = getDayOfWeek(data.list[i * 8].dt_txt);
         const forecast = 'Forecast: ' + data.list[i * 8].weather[0].description;
         const temp = 'Temp: ' + Math.round(data.list[i * 8].main.temp * 9 / 5 - 459.67) + '°F';
+        const humidity = 'Humidity: ' + data.list[i * 8].main.humidity + '%';
         const wind = 'Wind Speed: ' + data.list[i * 8].wind.speed + ' m/s';
 
-        const card = createForecastCard(date, forecast, temp, wind);
+        const card = createForecastCard(date, forecast, temp, wind, humidity);
         forecastCards.appendChild(card);
       }
     });
 };
 
-const createForecastCard = (date, forecast, temp, wind) => {
+const createForecastCard = (date, forecast, temp, wind, humidity) => {
   const card = document.createElement('div');
   card.classList.add('col-md-2', 'forecast-card', 'card');
 
@@ -96,12 +100,17 @@ const createForecastCard = (date, forecast, temp, wind) => {
   cardTemp.classList.add('card-text');
   cardTemp.textContent = temp;
 
+  const cardHumidity = document.createElement('p');
+    cardHumidity.classList.add('card-text');
+    cardHumidity.textContent = humidity;
+
   const cardWind = document.createElement('p');
   cardWind.classList.add('card-text');
   cardWind.textContent = wind;
 
   cardBody.appendChild(cardDate);
   cardBody.appendChild(cardForecast);
+  cardBody.appendChild(cardHumidity);
   cardBody.appendChild(cardTemp);
   cardBody.appendChild(cardWind);
   card.appendChild(cardBody);
