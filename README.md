@@ -34,8 +34,9 @@ The WeatherSense is a web application that allows users to search for weather in
 - JavaScript: Used to implement the weather fetching logic, handle user interactions, and dynamically update the UI.
 - OpenWeatherMap API: Used to retrieve weather data based on the user's input.
 
-## How to Run/Used provided link
+## How to Run/Use provided link
 
+[WeatherSense](https://gregfjr.github.io/WeatherSense/)
 
 ## Screenshot
 
