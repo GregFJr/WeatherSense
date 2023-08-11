@@ -14,7 +14,7 @@ The WeatherSense is a web application that allows users to search for weather in
 
 5. **Default City**: The application initially displays weather information for a default city (New York). Users can change the default city by searching for a new city.
 
-6. **Current Location Weather**: Users can click a button to retrieve weather information for their current location using geolocation.
+6. **Current Location Weather**: Users can click a button to retrieve weather information for their current location using geolocation when prompted.
 
 ## Usage
 
